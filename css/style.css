@@ -1,0 +1,335 @@
+body {
+    margin: 0;
+    background: #0D0D0D;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background: #1a1a1a;
+    padding: 15px 5%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.main-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-menu a:hover {
+    color: #6C63FF;
+}
+
+.flags {
+    margin-right: 100px;
+}
+
+.flags img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.slideshow {
+    width: 850px;
+    height: 600px;
+    margin: -40px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    border-radius: 25px;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.text {
+    margin-top: 80px;
+}
+
+.order-btn {
+    margin-top: 30px;
+    padding: 10px 25px;
+    background: #6C63FF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-btn:hover {
+    background: #4b46b8;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #262626; /* Тёмный фон */
+    color: white;
+    padding: 50px;
+    padding-left: 30px;
+    border-radius: 10px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background: white;
+}
+
+.popup-content button {
+    width: 346px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #6C63FF;
+    color: white;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #4b46b8;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.more-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: -40px;
+    position: relative;
+}
+
+.more-text {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s;
+}
+
+    .more-text:hover {
+        transform: scale(1.05);
+        color: #555;
+    }
+
+/* Доработка анимации стрелок */
+.arrow-left, .arrow-right {
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    animation: bounce 1s infinite alternate;
+}
+
+/* Плавная анимация стрелок */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+#about {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto 100px; /* Отступ сверху и снизу */
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+    .about h2 {
+        font-size: 36px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        font-size: 18px;
+        color: white;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+.contact-container {
+    background: #1a1a1a;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-menu {
+    display: none; /* Скрываем меню всегда */
+    flex-direction: column;
+    width: 100%;
+    background-color: #1a1a1a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 20px;
+    z-index: 10;
+}
+
+    .main-menu.open {
+        display: flex;
+        gap: 20px;
+    }
+
+/* Бургер всегда показываем */
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    position: relative;
+}
+
+    .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+
+
+/* Слайдер */
+.slideshow {
+    width: 100%;
+    height: 400px;
+    margin: 30px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 1; /* Устанавливаем слайдер ниже по уровню */
+}
+
+/* Стили для контента и других элементов */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Меню будет выше */
+}
+
+.language-selector {
+    position: relative;
+}
+
+    .language-selector img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-right: 50px;
+    }
+
+.dropdown-flags {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #1a1a1a;
+    padding: 5px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .dropdown-flags img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
